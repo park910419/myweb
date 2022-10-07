@@ -1,0 +1,32 @@
+@charset "UTF-8";
+	body {background-color : LightGray;}
+	h1 {color : red;}
+	p {color : hsl(120, 50%, 50%);}
+
+/* 맨 처음 default */
+a:link {
+  color: green;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+/* 방문한 경우 */
+a:visited {
+  color: pink;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+/* 마우스 올려놨을때 */
+a:hover {
+  color: red;
+  background-color: transparent;
+  text-decoration: underline;
+}
+
+/* 마우스를 클릭했을때 */
+a:active {
+  color: yellow;
+  background-color: transparent;
+  text-decoration: underline;
+}

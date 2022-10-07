@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- namespace는 패키지 이름과 동일하게 설정 -->
+<!-- id는 replymapper의 메소드 이름과 같게 -->
+<mapper namespace="com.syp.mapper.ReplyMapper">
+
+	<select id="getCoungByBno" resultType="int">
+		SELECT count(seqno) FROM reply WHERE board_seqno = #{bno}
+	</select>
+	
+	<!-- 저장 -->
+	<insert id="insert">
+		insert into reply(seqno, content, id, board_seqno)
+		values (REPLY_SEQ.nextval, #{comment}, #{id}, #{boardNo})
+	</insert>
+	
+	<!-- 조회 -->
+	<select id="getList" resultType="com.syp.dto.ReplyVO">
+	<![CDATA[
+		SELECT *
+		FROM (
+			SELECT	/*+INDEX(reply PK_REPLY) */
+					rownum rn, seqno, content, id, board_seqno,
+					TO_CHAR(wdate, 'YYYY-MM-DD HH24:MI:SS') as wdate
+			FROM reply
+			WHERE board_seqno = #{bno}
+			AND rownum <= #{cri.currentPage}* #{cri.rowPerPage}
+		) WHERE rn > (#{cri.currentPage} -1) * #{cri.rowPerPage}
+	]]>	
+	</select>
+	
+	<select id="read" resultType="com.syp.dto.ReplyVO"> 
+		SELECT * FROM reply WHERE seqno= #{rno}
+	</select>
+	
+	<!-- 수정 -->
+	<update id="update"> 
+		UPDATE reply SET content=#{content} WHERE seqno= #{seqno}
+	</update>
+	
+	<!-- 삭제 -->
+	<delete id="delete">
+		DELETE FROM reply WHERE seqno= #{rno} 
+	</delete>
+	
+</mapper>

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">	
+	<link rel="stylesheet" href="/myweb/css/index.css">
+	<script src="/myweb/js/formCheck.js"></script>
+</head>
+
+<body>
+
+<div class="header">
+  <h1>Welcome to my homeground</h1>
+  <h2>by seyoung</h2>
+</div>
+
+<div class="topnav">
+  <a class="active" href="/myweb/">Home</a>
+  <a href="#">Html/Css</a>
+  <a href="#">Java</a>
+  <a href="#">Link</a>
+  <a class="login" href="javascript:loginpop()" style="float:right">Login</a>
+</div>
+
+<div class="row">
+  <div class="leftcolumn">
+    <div class="card">
+      <h2>회원가입</h2>
+	  <hr>
+	  <div class="memregform">
+		  <form name="memRegForm" method="post" action="memRegProc.html" onsubmit="return formCheck()">
+			<input type="text" placeholder="아이디" maxlength="10" name="id" required>
+			<input type="password" placeholder="비밀번호" maxlength="10" name="pw" required>
+			<input type="text" placeholder="이름" name="name">
+			<span id="msg"></span>
+			
+			<input type="radio" name="gender"> 여자
+			<input type="radio" name="gender"> 남자
+				
+			<fieldset style="width:70%;">
+			<legend>취미</legend>
+			<input type="checkbox" name="hobby"> 테니스
+			<input type="checkbox" name="hobby"> 드럼
+			<input type="checkbox" name="hobby"> 명상
+			</fieldset>
+			
+			<div class="email">
+				<input type="text" placeholder="이메일" name="eid">@
+				<input type="text" placeholder="도메인주소" name="domain">
+				<select name="selDomain" onchange="inputDomain()">
+					<option value="">직접입력</option>
+					<option value="naver.com">naver.com</option>
+					<option value="gmail.com">gmail.com</option>
+					<option value="daum.net">daum.net</option>
+				</select>
+			</div>
+			
+			<textarea rows="5" cols="50" placeholder="자기소개(최대500자)" name="intro"></textarea>
+			
+			<input type="submit" value="회원등록">
+			<input type="reset" value="취소">		
+		  </form>
+	  </div>
+	  
+    </div>
+  </div>
+  <div class="rightcolumn">
+    <div class="card">
+      <h2>About Me</h2>
+      <div class="fakeimg" style="height:100px;">Image</div>
+      <p>Some text about me in culpa qui officia deserunt mollit anim..</p>
+    </div>
+    <div class="card">
+      <h3>Popular Post</h3>
+      <div class="fakeimg"><p>Image</p></div>
+      <div class="fakeimg"><p>Image</p></div>
+      <div class="fakeimg"><p>Image</p></div>
+    </div>
+    <div class="card">
+      <h3>Follow Me</h3>
+      <p>Some text..</p>
+    </div>
+  </div>
+</div>
+
+<div class="footer">
+  <h2>Footer</h2>
+</div>
+
+<div id="modal">
+	<form name="loginform">
+		아이디<br>
+		<input type="text"><br><br>
+		비밀번호<br>
+		<input type="text"><br><br>
+		<input type="submit" value="로그인">
+	</form>
+	
+	<p><a href="/myweb/member/memRegForm.html">회원가입</a> | <a href="#">비밀번호찾기</a><br>
+	<p><a href="">닫기</a>
+
+</div>
+
+<script>
+function loginpop() {
+    document.getElementById("modal").style.display = "block";
+}
+function modal_close() {
+    document.getElementById("modal").style.display = "none";
+}
+</script>
+
+</body>
+</html>
+
+

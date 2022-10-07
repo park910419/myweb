@@ -1,0 +1,147 @@
+@charset "UTF-8";
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial;
+  padding: 10px;
+  background: #f1f1f1;
+}
+
+.header {
+  padding: 15px;
+  color: white;
+  text-align: center;
+  background: #003366;
+  border: 2px solid white;}
+
+.topnav {
+	overflow: hidden;
+	position:sticky;
+	top:50px;
+	left:50px;
+	background-color: #6699CC;
+	border: 2px solid white;}
+
+.active{
+	background-color: #336699;}
+.login {
+	background-color: #336699;}
+	
+.topnav a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+
+/* 로그인 팝업 박스 스타일 */
+#modal{
+	z-index:1;
+	display:none;
+	position:fixed;
+	top:0;
+	left:0;
+	width:100%;
+	height:100%;
+	overflow:auto;
+	background-color:rgba(0,0,0,0.4);
+	}
+	
+.modal-content{
+	margin:auto;
+	text-align:center;
+	position:fixed;
+	top:50%;
+	left:50%;
+	width:350px;
+	height:350px;
+	border: 2px solid white;
+	border-radius:50px;
+	background:#FFF0F5;
+	padding : 30px 50px;
+	transform:translate(-50%, -50%);	
+}	
+
+.container{
+	padding : 20px 20px 20px 20px;
+}
+	
+/* 로그인 팝업 */
+#modal input[type=text], #modal input[type=password] {
+	background-color:#FFF0F5;
+	width: 50%;
+	padding: 10px 10px;
+	border: none;
+	border-bottom: 1.5px solid #ffb6bb;}
+
+#modal input[type=submit]{
+	background-color: #ff9ebe;
+	color: white;
+	padding: 15px 30px;
+ 	border: none;
+ 	border-radius:60px;
+	text-decoration: none;
+ 	margin: 4px 2px;
+	cursor: pointer;
+}
+
+/* 회원가입 폼*/
+.memregform {
+	display:block;
+	background-color:#FFF0F5;
+	padding: 30px 30px;
+ 	border: none;
+	text-decoration: none;
+ 	margin: 4px 2px;
+	cursor: pointer;
+}
+
+.memregform input[type=text]{
+	display:block;
+}
+
+.email input[type=text]{
+	display:inline;
+}
+
+
+input[type=submit]{
+	background-color: #ff9ebe;
+	color: white;
+	padding: 15px 30px;
+ 	border: none;
+ 	border-radius:60px;
+	text-decoration: none;
+ 	margin: 4px 2px;
+	cursor: pointer;
+}
+
+input[type=reset]{
+	background-color: #ff9ebe;
+	color: white;
+	padding: 15px 30px;
+ 	border: none;
+ 	border-radius:60px;
+	text-decoration: none;
+ 	margin: 4px 2px;
+	cursor: pointer;
+}
+
+
+/* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
+@media screen and (max-width: 400px) {
+  .topnav a {
+    float: none;
+    width: 100%;
+  }
+}

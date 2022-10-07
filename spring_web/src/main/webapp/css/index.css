@@ -1,0 +1,234 @@
+@charset "UTF-8";
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial;
+  padding: 10px;
+  background: #f1f1f1;
+}
+
+/* Header/Blog Title */
+
+.header {
+  padding: 15px;
+  color: white;
+  text-align: center;
+  background: #669999;
+  border: 2px solid white;}
+
+.header h1 {
+  font-size: 55px;
+  padding: 15px 30px;
+}
+
+/* Style the top navigation bar */
+.topnav {
+	overflow: hidden;
+	position:sticky;
+	top:50px;
+	left:50px;
+	background-color: #99CCCC;
+	border: 2px solid white;}
+
+.active{
+	background-color: #336666;}
+.login {
+	background-color: #336666;}
+	
+/* Style the topnav links */
+.topnav a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+/* Change color on hover */
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* Create two unequal columns that floats next to each other */
+/* Left column */
+.leftcolumn {   
+  float: left;
+  width: 75%;
+}
+
+/* Right column */
+.rightcolumn {
+  float: left;
+  width: 25%;
+  background-color: #f1f1f1;
+  padding-left: 20px;
+}
+
+/* Fake image */
+.fakeimg {
+  background-color: #aaa;
+  width: 100%;
+  padding: 20px;
+}
+
+/* Add a card effect for articles */
+.card {
+  background-color: white;
+  padding: 20px;
+  margin-top: 20px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: block;
+ clear: both;
+}
+
+/* Footer */
+.footer {
+  padding: 20px;
+  text-align: center;
+  background: #ddd;
+}
+
+/* 로그인 팝업 박스 스타일 */
+#modal{
+	z-index:1;
+	display:none;
+	position:fixed;
+	top:0;
+	left:0;
+	width:100%;
+	height:100%;
+	overflow:auto;
+	background-color:rgba(0,0,0,0.4);
+	}
+	
+.modal-content{
+	margin:auto;
+	text-align:center;
+	position:fixed;
+	top:50%;
+	left:50%;
+	width:350px;
+	height:350px;
+	border: 2px solid white;
+	border-radius:50px;
+	background:#F8F8FF;
+	padding : 30px 50px;
+	transform:translate(-50%, -50%);	
+}	
+
+.container{
+	padding : 20px 20px 20px 20px;
+}
+	
+/* 로그인 팝업 */
+#modal input[type=text], #modal input[type=password] {
+	background-color:#F8F8FF;
+	width: 60%;
+	padding: 10px 10px;
+	border: none;
+	border-bottom: 1.5px solid lightgray;}
+
+#modal input[type=submit]{
+/* 	background-color: linear-gradient(to bottom, #ffffff 5%, #f6f6f6 100%);
+	color: white;
+	padding: 15px 30px;
+	border:1px solid #dcdcdc;
+	border-radius:6px;
+	text-decoration: none;
+ 	margin: 4px 2px;
+	cursor: pointer; */
+	
+	box-shadow:inset 0px 1px 0px 0px #ffffff;
+	background:linear-gradient(to bottom, #ffffff 5%, #f6f6f6 100%);
+	background-color:#ffffff;
+	border-radius:6px;
+	border:1px solid #dcdcdc;
+	display:inline-block;
+	cursor:pointer;
+	color:#666666;
+	font-family:Arial;
+	font-size:15px;
+	font-weight:bold;
+	padding:6px 24px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #ffffff;
+}
+
+/* 회원가입 폼*/
+.memregform {
+	display:block;
+	background-color:#FFF0F5;
+	padding: 30px 30px;
+ 	border: none;
+	text-decoration: none;
+ 	margin: 4px 2px;
+	cursor: pointer;
+}
+
+.memregform input[type=text]{
+	display:block;
+}
+
+.email input[type=text]{
+	display:inline;
+}
+
+
+input[type=submit]{
+	box-shadow:inset 0px 1px 0px 0px #ffffff;
+	background:linear-gradient(to bottom, #ffffff 5%, #f6f6f6 100%);
+	background-color:#ffffff;
+	border-radius:6px;
+	border:1px solid #dcdcdc;
+	display:inline-block;
+	cursor:pointer;
+	color:#666666;
+	font-family:Arial;
+	font-size:15px;
+	font-weight:bold;
+	padding:6px 24px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #ffffff;
+}
+
+input[type=reset]{
+	box-shadow:inset 0px 1px 0px 0px #ffffff;
+	background:linear-gradient(to bottom, #ffffff 5%, #f6f6f6 100%);
+	background-color:#ffffff;
+	border-radius:6px;
+	border:1px solid #dcdcdc;
+	display:inline-block;
+	cursor:pointer;
+	color:#666666;
+	font-family:Arial;
+	font-size:15px;
+	font-weight:bold;
+	padding:6px 24px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #ffffff;
+}
+
+
+/* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 800px) {
+  .leftcolumn, .rightcolumn {   
+    width: 100%;
+    padding: 0;
+  }
+}
+
+/* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
+@media screen and (max-width: 400px) {
+  .topnav a {
+    float: none;
+    width: 100%;
+  }
+}
