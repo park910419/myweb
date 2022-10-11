@@ -79,7 +79,7 @@ public class BoardServiceImp implements BoardService {
 
 	public String update(HttpServletRequest req, HttpServletResponse resp) {
 		
-		DiskFileItemFactory factory = new DiskFileItemFactory();
+		 DiskFileItemFactory factory = new DiskFileItemFactory();
 		 factory.setDefaultCharset(CHARSET);
 		 ServletFileUpload upload = new ServletFileUpload(factory);
 		 

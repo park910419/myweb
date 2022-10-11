@@ -33,6 +33,7 @@ public class FileServiceImpl implements FileService {
 		AttachFile attachFile = null;
 		long fileSize = item.getSize();
 		System.out.println("업로드 파일 사이즈:"+ fileSize);
+		
 		if(fileSize>0) {
 			String fileUploadPath = "d:/sypark/upload/";
 			String fileName = item.getName();
