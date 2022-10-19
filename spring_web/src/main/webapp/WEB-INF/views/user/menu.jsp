@@ -12,7 +12,8 @@
 		<font>${loginuser.name }님 반갑습니다.</font>
 		<a class="login" href="logout.do" style="float:right">Logout</a>
     	<a class="mypage" href="member/mypage.jsp" style="float:right">My page</a>
-		<a class="chat" href="/chat">chat</a>
+		<a class="chat" href="/chat">1:1채팅</a>
+		<a class="chat" href="/chatList">채팅리스트</a>
 	</c:if>
 	
 	<c:if test="${loginuser eq null }" >

@@ -20,7 +20,7 @@
 	
 	<script>
 	
-	let url="ws://localhost:8088/mychat";
+	let url="ws://localhost:8088/chat";
 	var userid="${loginuser.id}";
 	
 	var ws;
